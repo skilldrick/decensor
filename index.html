@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <script src="jquery.decensor.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.decensor').click(function (e) {
+          $('body').decensor([['load', 'heap'], [/wat/gi, 'wit']]);
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>This is a load of sh!tting sh!t b*llocks you f*ckwat</p>
+    <p><a href='#' class='decensor'>Decensor</a></p>
+  </body>
+</html>
