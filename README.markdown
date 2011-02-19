@@ -28,3 +28,8 @@ Use nested arrays for multiple mappings:
 It's OK to use regexes as well:
 
     $('body').decensor([/tw(e|i)rp/g, 'twat']);
+
+Demo
+----
+
+[skilldrick.co.uk/decensor](http://skilldrick.co.uk/decensor/)
