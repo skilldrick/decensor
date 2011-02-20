@@ -1,12 +1,9 @@
 DECENSOR
 ========
 
-Decensor is a plugin for jQuery for decensoring text.
-
-Important
----------
-
-This plugin performs a `.html()` replacement, so will remove event handlers and references to elements. If that's a problem, use Ben Alman's [jQuery replaceText](http://benalman.com/projects/jquery-replacetext-plugin/) instead.
+Decensor is a plugin for jQuery for decensoring text. It uses [Ben Alman's
+replaceText plugin](http://benalman.com/projects/jquery-replacetext-plugin/)
+for the text replacement.
 
 Usage
 -----
@@ -24,10 +21,6 @@ with "twat":
 Use nested arrays for multiple mappings:
 
     $('body').decensor([['dingle', 'dongle'], ['blooming', 'bloody']]);
-
-It's OK to use regexes as well:
-
-    $('body').decensor([/tw(e|i)rp/g, 'twat']);
 
 Demo
 ----
