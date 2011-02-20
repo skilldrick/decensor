@@ -5,7 +5,7 @@
     ["b*llocks", 'bollocks'],
   ];
 
-  $.fn.decensor = function (userMapping) {
+  $.fn.decensor = function (userMapping, censor) {
     //Check array was supplied
     if (userMapping instanceof Array) {
       //If nested array then concat
@@ -18,28 +18,32 @@
     }
 
     return this.each(function () {
-      decensor($(this));
+      decensor($(this), censor);
     });
   };
 
-  function decensor($el) {
+  function decensor($el, censor) {
     var html = $el.html();
+    var from = '';
+    var to = '';
     var regex = null;
-    var str = '';
 
     for (var i = 0, len = mapping.length; i < len; i++) {
-      str = mapping[i][0];
-      if (str instanceof RegExp) {
-        regex = str;
+      if (censor) {
+        from = mapping[i][1];
+        to = mapping[i][0];
       }
       else {
-        // http://simonwillison.net/2006/Jan/20/escape/
-        str = str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-        regex = new RegExp(str, 'g');
+        from = mapping[i][0];
+        to = mapping[i][1];
       }
-      html = html.replace(regex, mapping[i][1]);
+      // http://simonwillison.net/2006/Jan/20/escape/
+      from = from.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+      regex = new RegExp(from, 'g');
+      console.log(regex);
+      html = html.replace(regex, to);
     }
-
+    console.log(html);
     $el.html(html);
   }
 })(jQuery);

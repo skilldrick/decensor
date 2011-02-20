@@ -5,15 +5,16 @@
     <script src="jquery.decensor.js"></script>
     <script>
       $(document).ready(function () {
+        $('body').decensor(null, true);
         $('.decensor').click(function (e) {
-          $('body').decensor([['load', 'heap'], [/wat/gi, 'wit']]);
+          $('body').decensor();
           e.preventDefault();
         });
       });
     </script>
   </head>
   <body>
-    <p>This is a load of sh!tting sh!t b*llocks you f*ckwat</p>
+    <p>This is a load of shitting shit bollocks you fuckwit</p>
     <p><a href='#' class='decensor'>Decensor</a></p>
   </body>
 </html>
