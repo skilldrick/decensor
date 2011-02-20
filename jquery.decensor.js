@@ -23,7 +23,6 @@
   };
 
   function decensor($el, censor) {
-    var html = $el.html();
     var from = '';
     var to = '';
     var regex = null;
@@ -40,10 +39,7 @@
       // http://simonwillison.net/2006/Jan/20/escape/
       from = from.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
       regex = new RegExp(from, 'g');
-      console.log(regex);
-      html = html.replace(regex, to);
+      $el.replaceText(regex, to);
     }
-    console.log(html);
-    $el.html(html);
   }
 })(jQuery);

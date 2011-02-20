@@ -2,12 +2,13 @@
 <html>
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <script src="jquery.ba-replacetext.min.js"></script>
     <script src="jquery.decensor.js"></script>
     <script>
       $(document).ready(function () {
-        $('body').decensor(null, true);
+        $('body *').decensor(null, true);
         $('.decensor').click(function (e) {
-          $('body').decensor();
+          $('body *').decensor();
           e.preventDefault();
         });
       });
