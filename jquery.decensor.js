@@ -16,6 +16,9 @@
         mapping.push(userMapping);
       }
     }
+    else if (userMapping === true) {
+      censor = userMapping;
+    }
 
     return this.each(function () {
       decensor($(this), censor);

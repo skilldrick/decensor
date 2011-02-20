@@ -9,7 +9,7 @@ Usage
 -----
 
 This will apply decensor to the whole body, with the default mapping (which
-covers "sh!t", "f\*ck" an "b\*llocks"):
+covers "sh!t", "f\*ck" and "b\*llocks"):
 
     $('body').decensor();
 
@@ -21,6 +21,11 @@ with "twat":
 Use nested arrays for multiple mappings:
 
     $('body').decensor([['dingle', 'dongle'], ['blooming', 'bloody']]);
+
+Pass `true` as a second argument (or as the only argument) to apply the
+opposite transformation. This will effectively censor swear words:
+
+    $('body').decensor(true);
 
 Demo
 ----

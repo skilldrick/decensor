@@ -6,7 +6,7 @@
     <script src="jquery.decensor.js"></script>
     <script>
       $(document).ready(function () {
-        $('body *').decensor(null, true);
+        $('body *').decensor(true);
         $('.decensor').click(function (e) {
           $('body *').decensor();
           e.preventDefault();
